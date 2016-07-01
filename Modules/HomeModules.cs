@@ -16,7 +16,7 @@ namespace AddressBook
       };
       Get["/contacts"] = _ => {
         List<Contact> allContacts = Contact.GetAll();
-        allContacts.Sort((c1, c2) => c1.GetName().CompareTo(c2.GetName()));
+        // allContacts.Sort((c1, c2) => c1.GetName().CompareTo(c2.GetName()));
         return View["list_all_contacts.cshtml", allContacts];
       };
       Post["/contacts/new"] = _ => {
@@ -44,6 +44,10 @@ namespace AddressBook
         contact.SetAddress(Request.Form["address"]);
         contact.SetPhone(Request.Form["phone"]);
         return View["/show_details.cshtml", contact];
+      };
+      Get["/contacts/details/delete/{id}"] = parameters => {
+        Contact.DeleteContact(parameters.id);
+        return View["/contact_deleted.cshtml"];
       };
     }
   }

@@ -69,9 +69,9 @@ namespace AddressBook.Objects
     //Delete one contacts
     public static void DeleteContact(int searchId)
     {
-      Contact contactToDelete = Find(searchId);
+       Contact contactToDelete = Find(searchId);
       _instances.Remove(contactToDelete);
-      for (int Index = 0; index < _instances.Count; Index++)
+      for (int index = 0; index < _instances.Count; index++)
       {
         _instances[index].SetId(index + 1);
       }
