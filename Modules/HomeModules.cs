@@ -16,14 +16,16 @@ namespace AddressBook
       };
       Get["/contacts"] = _ => {
         List<Contact> allContacts = Contact.GetAll();
-        return View["list_all_contacts.cshtml", allJobs];
+        allContacts.Sort((c1, c2) => c1.GetName().CompareTo(c2.GetName()));
+        return View["list_all_contacts.cshtml", allContacts];
+      };
+      Post["/contacts/new"] = _ => {
+      Contact newContact = new Contact(Request.Form["name"], Request.Form["address"], Request.Form["phone"]);
+      return View["/show_added_contact.cshtml", newContact];
       };
       Get["/contacts/new"] = _ => {
         return View["show_added_contact.cshtml"];
       };
-      Post["/contacts/new"] = _ =>
-      Contact newContact = new Contact(Request.Form["name"], Request.Form["address"] Request.Form["phone"]);
-      return View["/show_added_contact.cshtml", newContact];
-    };
+    }
   }
 }

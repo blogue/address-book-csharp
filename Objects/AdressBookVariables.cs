@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace AddressBook.Objects
 {
-  private class Contact
+  public class Contact
   {
     //Contact object variables
     private string _name;
@@ -26,7 +26,7 @@ namespace AddressBook.Objects
     }
     public string GetAddress()
     {
-      return _address
+      return _address;
     }
     public string GetPhone()
     {
@@ -34,7 +34,7 @@ namespace AddressBook.Objects
     }
     public static List<Contact> GetAll()
     {
-      return _instanaces;
+      return _instances;
     }
 
     //Delete all contacts
