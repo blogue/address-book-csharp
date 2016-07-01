@@ -56,6 +56,13 @@ namespace AddressBook.Objects
     {
       _phone = newPhone;
     }
+
+    // Search for specific contact
+    public static Contact Find(int searchId)
+    {
+      return _instances[searchId -1];
+    }
+
     //Delete all contacts
     public static void ClearAll()
     {

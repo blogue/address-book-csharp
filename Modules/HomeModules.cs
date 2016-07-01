@@ -30,6 +30,21 @@ namespace AddressBook
         Contact.ClearAll();
         return View["contacts_deleted.cshtml"];
       };
+      Get["/contacts/details/{id}"] = parameters => {
+        Contact contact = Contact.Find(parameters.id);
+        return View["/show_details.cshtml", contact];
+      };
+      Get["/contacts/details/edit/{id}"] = parameters => {
+        Contact contact = Contact.Find(parameters.id);
+        return View["/edit_contact.cshtml", contact];
+      };
+      Post["/contacts/details/{id}"] = parameters => {
+        Contact contact = Contact.Find(parameters.id);
+        contact.SetName(Request.Form["name"]);
+        contact.SetAddress(Request.Form["address"]);
+        contact.SetPhone(Request.Form["phone"]);
+        return View["/show_details.cshtml", contact];
+      };
     }
   }
 }
