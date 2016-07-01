@@ -23,8 +23,7 @@ benjamin.logue73@gmail.com
 ## Technologies Used
 
 * C#
-* Nancy
-* Razor
+* Nancy and Razor
 
 
 ### License
