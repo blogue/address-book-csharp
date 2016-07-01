@@ -1,6 +1,18 @@
 <h1>Contacts</h1>
 
-<!-- list of contacts in address book -->
+@if(Model.Length == "0")
+{
+    <h1>No Contacts in Book!</h1>
+} else {
+
+
+@foreach(Contact contacts in Model)
+{
+  @contacts.GetName();
+  @contacts.GetAddress();
+  @contacts.GetPhone();
+}
+}
 
 <a href="/">Home</a>
 <a href="/add_contact">Add Contact</a>
