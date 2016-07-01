@@ -56,11 +56,25 @@ namespace AddressBook.Objects
     {
       _phone = newPhone;
     }
-
+    public void SetId(int newId)
+    {
+      _id = newId;
+    }
     // Search for specific contact
     public static Contact Find(int searchId)
     {
       return _instances[searchId -1];
+    }
+
+    //Delete one contacts
+    public static void DeleteContact(int searchId)
+    {
+      Contact contactToDelete = Find(searchId);
+      _instances.Remove(contactToDelete);
+      for (int Index = 0; index < _instances.Count; Index++)
+      {
+        _instances[index].SetId(index + 1);
+      }
     }
 
     //Delete all contacts
