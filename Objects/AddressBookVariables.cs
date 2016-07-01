@@ -66,7 +66,7 @@ namespace AddressBook.Objects
       return _instances[searchId -1];
     }
 
-    //Delete one contacts
+    //Delete one contact
     public static void DeleteContact(int searchId)
     {
        Contact contactToDelete = Find(searchId);
