@@ -19,4 +19,6 @@
 
 <a href="/">Home</a>
 <a href="/add_contact">Add Contact</a>
-<a href="/clear_list">Delete Contact List</a>
+<form action="/contacts/delete_all" method="post">
+  <button type="submit" name="button">Delete All Contacts</button>
+</form>

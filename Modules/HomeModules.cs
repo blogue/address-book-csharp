@@ -26,6 +26,10 @@ namespace AddressBook
       Get["/contacts/new"] = _ => {
         return View["show_added_contact.cshtml"];
       };
+      Post["/contacts/delete_all"] = _ => {
+        Contact.ClearAll();
+        return View["contacts_deleted.cshtml"];
+      };
     }
   }
 }
