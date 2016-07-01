@@ -6,7 +6,7 @@
 
 ## Description
 
-This is a basic address book which will allow a user to create a contact, view contact details and delete all contacts.
+This is a basic address book which will allow a user to create a contact, view a list of contacts by name, get contact details, edit contacts, delete individual contacts and delete all contacts.
 
 ## Setup/Installation Requirements
 
